@@ -3,7 +3,7 @@ session_start();
 include '../config/config.php';
 
 if (!isset($_SESSION['username'])) {
-    header("Location: ../login.php");
+    header("Location: ../index.php");
     exit;
 }
 
@@ -41,7 +41,6 @@ $result = mysqli_query($conn, "SELECT * FROM ims_warehouse ORDER BY warehouse_id
                     <th>Warehouse ID</th>
                     <th>Name</th>
                     <th>Location</th>
-                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -52,10 +51,6 @@ $result = mysqli_query($conn, "SELECT * FROM ims_warehouse ORDER BY warehouse_id
                     <td><?= htmlspecialchars($row['warehouse_id']) ?></td>
                     <td><?= htmlspecialchars($row['name']) ?></td>
                     <td><?= htmlspecialchars($row['location']) ?></td>
-                    <td>
-                        <a href="#" class="text-warning editBtn" data-bs-toggle="modal" data-bs-target="#editModal"><i class="fa fa-pen"></i></a>
-
-                    </td>
                 </tr>
                 <?php endwhile; ?>
             </tbody>

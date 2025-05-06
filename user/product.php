@@ -3,7 +3,7 @@ session_start();
 include '../config/config.php';
 
 if (!isset($_SESSION['username'])) {
-    header("Location: ../login.php");
+    header("Location: ../index.php");
     exit;
 }
 
@@ -46,7 +46,6 @@ $result = mysqli_query($conn, "SELECT * FROM ims_product ORDER BY product_id ASC
                             <th>Supplier</th>
                             <th>Price</th>
                             <th>Created</th>
-                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -58,9 +57,6 @@ $result = mysqli_query($conn, "SELECT * FROM ims_product ORDER BY product_id ASC
                             <td><?= $row['supplier_id'] ?></td>
                             <td>$<?= number_format($row['price'], 2) ?></td>
                             <td><?= $row['created_at'] ?></td>
-                            <td>
-                                <a href="#" class="text-warning editBtn" data-bs-toggle="modal" data-bs-target="#editModal"><i class="fa fa-pen"></i></a>
-                            </td>
                         </tr>
                         <?php endwhile; ?>
                     </tbody>

@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt = $conn->prepare("INSERT INTO ims_user (username, password, role) VALUES (?, ?, ?)");
         $stmt->bind_param("sss", $username, $hashed_password, $role);
         if ($stmt->execute()) {
-            echo "<script>alert('Registration successful! Please log in.'); window.location.href='login.php';</script>";
+            echo "<script>alert('Registration successful! Please log in.'); window.location.href='index.php';</script>";
         } else {
             echo "<script>alert('Registration failed! Please try again.'); window.location.href='register.php';</script>";
         }
@@ -102,7 +102,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
         <button type="submit" class="btn btn-dark w-100 btn-register">Sign Up</button>
         <div class="text-center mt-3">
-            <a href="login.php">Already have an account? Login here</a>
+            <a href="index.php">Already have an account? Login here</a>
         </div>
     </form>
 </div>

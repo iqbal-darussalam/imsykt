@@ -3,7 +3,7 @@ session_start();
 include '../config/config.php';
 
 if (!isset($_SESSION['username'])) {
-    header("Location: ../login.php");
+    header("Location: ../index.php");
     exit;
 }
 
@@ -50,7 +50,6 @@ $result = mysqli_query($conn, "SELECT * FROM ims_transaction ORDER BY transactio
         <th>Quantity</th>
         <th>Transaction Date</th>
         <th>Warehouse ID</th>
-        <th>Action</th>
     </tr>
 </thead>
             <tbody>
@@ -62,9 +61,6 @@ $result = mysqli_query($conn, "SELECT * FROM ims_transaction ORDER BY transactio
                     <td><?= $row['quantity'] ?></td>
                     <td><?= $row['transaction_date'] ?></td>
                     <td><?= $row['warehouse_id'] ?></td>
-                    <td>
-                        <a href="#" class="text-warning editBtn" data-bs-toggle="modal" data-bs-target="#editModal"><i class="fa fa-pen"></i></a>
-                    </td>
                 </tr>
                 <?php endwhile; ?>
             </tbody>

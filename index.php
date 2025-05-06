@@ -27,14 +27,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             } elseif ($user['role'] === 'staff') {
                 header("Location: user/index.php");
             } else {
-                echo "<script>alert('Unknown role detected.'); window.location.href='login.php';</script>";
+                echo "<script>alert('Unknown role detected.'); window.location.href='index.php';</script>";
             }
             exit();
         } else {
-            echo "<script>alert('Incorrect password!'); window.location.href='login.php';</script>";
+            echo "<script>alert('Incorrect password!'); window.location.href='index.php';</script>";
         }
     } else {
-        echo "<script>alert('Username not found!'); window.location.href='login.php';</script>";
+        echo "<script>alert('Username not found!'); window.location.href='index.php';</script>";
     }
 }
 ?>
