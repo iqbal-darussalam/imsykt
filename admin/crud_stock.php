@@ -1,19 +1,6 @@
 <?php
 include '../config/config.php';
 
-// Add
-// if (isset($_POST['add'])) {
-//     $product_id = $_POST['product_id'];
-//     $quantity = $_POST['quantity'];
-//     $warehouse_id = $_POST['warehouse_id'];
-
-//     $stmt = $conn->prepare("INSERT INTO ims_stock (product_id, quantity, warehouse_id) VALUES (?, ?, ?)");
-//     $stmt->bind_param("iii", $product_id, $quantity, $warehouse_id);
-//     $stmt->execute();
-//     header("Location: stock.php");
-//     exit;
-// }
-
 //Add new
 if (isset($_POST['add'])) {
     $product_id = $_POST['product_id'];

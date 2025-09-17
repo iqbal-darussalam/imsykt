@@ -1,3 +1,4 @@
+<link rel="icon" type="image/png" href="../img/logo-ykt.png">
 <div class="sidebar">
     <div class="text-center mb-4">
         <img src="../img/logo-ykt.png" alt="YKT" style="max-width: 100px;">
